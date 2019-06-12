@@ -1,6 +1,6 @@
 # Text Classification on SST Dataset
 
-A simple text classification on SST dataset via PyTorch.
+A simple text classification on SST dataset via PyTorch, using pretrianed GloVe embedding.
 
 ## Models
 
