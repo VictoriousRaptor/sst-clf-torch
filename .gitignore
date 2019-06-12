@@ -1,0 +1,10 @@
+report/
+data/
+cnn-text-classification-pytorch-master/
+.vscode/
+__pycache__/
+*.zip
+*.ckpt
+note.md
+test.py
+example.py
