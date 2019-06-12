@@ -42,7 +42,7 @@ class SSTDataset(Dataset):
                                  name + '.txt', header=None, encoding='utf-8', dtype=int)
         phrase_ids = set(np.array(phrase_ids).squeeze())  # phrase_id in this dataset
         self.num_classes = num_classes
-        phrase_dict = {}  # {phrase->id} 
+        phrase_dict = {}  # {id->phrase} 
 
 
         if SSTDataset.label_tmp is None:
