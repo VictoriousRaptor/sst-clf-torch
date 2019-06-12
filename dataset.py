@@ -70,10 +70,9 @@ class SSTDataset(Dataset):
         # label of each sentence
         self.labels = torch.zeros((len(phrase_dict),), dtype=torch.long)
 
-        i = 0
         missing_count = 0
         # 查找每个句子中词的词向量
-        for idx, p in phrase_dict.items():
+        for i, (idx, p) in enumerate(phrase_dict.items()):
             tmp1 = []  # 暂存句子中单词的id
             # 分词
             for w in p.split(' '):
@@ -84,7 +83,6 @@ class SSTDataset(Dataset):
 
             self.phrase_vec.append(torch.tensor(tmp1, dtype=torch.long))  # 包含句子中每个词的glove index
             self.labels[i] = get_class(SSTDataset.label_tmp[idx], self.num_classes) # pos i 的句子的label
-            i += 1
 
         print(missing_count)
 
