@@ -7,7 +7,6 @@ import torch.optim
 import torch.utils.data as data
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
-from config import Config
 from TextCNN import TextCNN
 from RCNN import RCNN
 from RNN import myRNN, LSTMClassifier

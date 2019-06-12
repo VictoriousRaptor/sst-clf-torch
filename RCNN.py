@@ -15,7 +15,7 @@ class RCNN(nn.Module):
         self.hidden_size_linear = 64  # dim after pooling
         self.embedding_length = config.wordvec_dim
         self.device = config.device
-        self.embeddings = nn.Embedding(400000, self.embedding_length).to(config.device)
+        self.embeddings = nn.Embedding(config.weight.shape[0], self.embedding_length).to(config.device)
         self.embeddings = self.embeddings.from_pretrained(config.weight, freeze=False)
         self.lstm = nn.LSTM(input_size = self.embedding_length,
                             hidden_size = self.hidden_size,

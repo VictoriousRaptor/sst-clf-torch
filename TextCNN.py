@@ -13,7 +13,7 @@ class TextCNN(nn.Module):
         self.kernel_num = config.kernel_num  # Number of conv kernels
         self.embedding_length = config.wordvec_dim  
         self.Ks = config.kernel_sizes
-        self.word_embeddings = nn.Embedding(400000, self.embedding_length)  # Embedding layer
+        self.word_embeddings = nn.Embedding(config.weight.shape[0], self.embedding_length)  # Embedding layer
         self.word_embeddings = self.word_embeddings.from_pretrained(config.weight, freeze=False)  # Load pretrianed word embedding, and fine-tuing
         
         self.convs = nn.ModuleList([nn.Conv2d(1, config.kernel_num, (K, config.wordvec_dim), bias=True) for K in self.Ks])

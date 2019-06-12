@@ -13,7 +13,7 @@ class myRNN(nn.Module):
         self.num_layers = 2  # Stack layers
         self.embedding_length = config.wordvec_dim  
         self.word_embeddings = nn.Embedding(
-            400000, self.embedding_length)  # Embedding layer
+            config.weight.shape[0], self.embedding_length)  # Embedding layer
         self.word_embeddings = self.word_embeddings.from_pretrained(
             config.weight, freeze=False)  # Load pretrianed word embedding, and fine-tuing
         self.recurrent = nn.RNN(self.embedding_length, self.hidden_size,
@@ -49,7 +49,7 @@ class LSTMClassifier(nn.Module):
         self.hidden_size = 150
         self.embedding_length = config.wordvec_dim 
         self.word_embeddings = nn.Embedding(
-            400000, self.embedding_length)  # Embedding layer
+            config.weight.shape[0], self.embedding_length)  # Embedding layer
         self.word_embeddings = self.word_embeddings.from_pretrained(
             config.weight, freeze=False)  # Load pretrianed word embedding, and fine-tuing
 
