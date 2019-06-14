@@ -1,10 +1,10 @@
+import re
+
 import numpy as np
 import pandas as pd
-import re
-from torch.utils.data import Dataset, TensorDataset
-import torchtext.data
 import torch
-import time
+import torchtext.data
+from torch.utils.data import Dataset, TensorDataset
 
 
 def clean_data(sentence):
