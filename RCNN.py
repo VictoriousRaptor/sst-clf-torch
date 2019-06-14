@@ -39,6 +39,7 @@ class RCNN(nn.Module):
         input_features = torch.cat([lstm_out, embedded_sent], 2)  # (batch_size, seq_len, embed_size + 2*hidden_size)
 
         # The method described in the original paper, very slow
+        # maybe torch.split?
         # input_features = torch.zeros((x.size()[0], x.size()[1], self.hidden_size+self.embedding_length), device=self.device)
         # for j in range(x.size()[1]):
         #     for h in range(self.hidden_size):
